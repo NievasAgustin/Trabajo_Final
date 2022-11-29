@@ -1,0 +1,25 @@
+\setcounter{page}{1}
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+\pagenumbering{arabic} % And moving back to arabic numbering (1,2,3,4) for the body.
+\patchcmd{\chapter}
+  {\clearpage}
+  {\cleardoublepage}
+  {}
+  {}
+Con la emergente onda que parece no detenerse, la energía solar no deja de crecer, tanto como los avances tecnológicos alrededor de ésta, como el número de lugares donde se encuentran estas fuentes de energía. 
+
+Sin embargo, para conectar de manera correcta los paneles solares es necesario un control electrónico entre éstos y la respectiva carga para obtener el punto de máxima potencia y eficiencia. 
+
+Se destacan dos partes en el control de potencia de paneles solares:
+
+La primera, la topología de los posibles circuitos de electrónica de potencia que uno puede emplear. De estas topologías hay desde hace 50 años, sin embargo, el desarrollo de nuevas topologías nunca se detuvo.
+
+La segunda, la metodología de los algoritmos que buscan el punto de máxima potencia (\textit{Máximum Power Point Tracking}, MPPT). Al igual que las topologías de circuitos de control para paneles solares, estos métodos existen desde hace años, y hay metodologías emergentes en el estado del arte.
+
+Al realizar la combinación de estas dos partes en un sistema de paneles fotovoltaicos se obtiene el completo control electrónico de la energía que brinda esta fuente.
+
+Por lo que en el presente trabajo, se realiza el desarrollo, diseño, análisis e implementación de la topología del conversor síncrono DC-DC reductor (\textit{Buck}, \textit{Stepdown}) junto con metodologías de perturbación y observación (\textit{Perturb and Observe}, P\&O) modificadas.
+
+La implementación de las metodologías es sobre la placa de desarrollo ESP32 (\textit{DeveloperBoard}) y la recolección de datos se almacenan en una hoja de cálculo en internet utilizando las herramientas de Google.    
+

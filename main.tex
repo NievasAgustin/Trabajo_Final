@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage{afterpage}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks,
+allcolors=black,
+linktoc=all
+}
+\usepackage{titlesec}
+%\titleformat{\chapter}[display]{\vspace{-3cm}\normalfont\bfseries}{}{0pt}{\LARGE}
+%\titleformat{\chapter}[display]
+%  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{5pt}{\Huge}
+%\titleformat{\section}
+%  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+%\titleformat{\subsection}
+%  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+%\titleformat{\subsubsection}
+%  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+%\titleformat{\paragraph}[runin]
+%\  {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+%\\titleformat{\subparagraph}[runin]
+%\  {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+  
+\usepackage[english,main=spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{listingsutf8}
+\usepackage[framemethod=default]{mdframed}
+\definecolor{LightGray}{gray}{0.9}
+\usepackage{babel}
+\usepackage[english]{babelbib}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage{caption}
+\usepackage{subcaption}
+\lstdefinestyle{codigo}{
+    backgroundcolor= \color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\scriptsize\normalfont\sffamily,  
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=t,                 
+    keepspaces=true,
+    numbers=left,                   
+    numbersep=5pt,  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,
+    framexleftmargin=15pt,
+    framexrightmargin=5pt,
+    framexbottommargin=5pt,
+    framextopmargin=5pt,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate = {¬}{{$\neg$}}1
+}
+
+\DeclareCaptionFormat{listing}{#1#2#3}
+\captionsetup[lstlisting]{format=listing,singlelinecheck=false, margin=0pt, font={sf},labelsep=space,labelfont=bf}
+
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Índice de códigos}
+
+\usepackage[many]{tcolorbox}  
+\newtcolorbox{boxB}{
+    boxrule = 1.5pt,
+    colframe = white,
+    rounded corners,
+    arc = 5pt
+}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{terminalbgcolor}{HTML}{330033}
+\definecolor{terminalrulecolor}{HTML}{000099}
+
+\lstdefinestyle{terminal}
+{
+    backgroundcolor=\color{black},
+	basicstyle=\scriptsize\color{white}\ttfamily,
+	breaklines=true,
+	captionpos=t,
+	extendedchars=true,
+	showspaces=false,
+	showstringspaces=false,
+	frame=single,
+    framexleftmargin=5pt,
+    framexrightmargin=5pt,
+    framexbottommargin=5pt,
+    framextopmargin=5pt,
+    breakindent=0pt,
+    breakautoindent=false,
+    literate={\$}{{\$}}1 
+         {:}{{:}}1
+         {¬}{{$\neg$}}1
+         {~}{{\textasciitilde}}1,
+}
+
+\begin{document}
+
+\include{00-portada}
+\pagenumbering{roman} 
+\include{01-Declaratoria_Autoria}   %camiar a imagen del profe de firmar?
+%\afterpage{\null\thispagestyle{empty}\newpage}
+\include{011-motivacion}    
+\include{02-agradecimientos}     
+\setcounter{page}{1}
+\tableofcontents
+
+
+\listoftables
+%\lstlistoflistings
+
+
+\listoffigures
+
+
+\include{03-abstract}
+
+
+\include{0-introduccion}
+\include{1-fundamentacion_teorica}
+%\include{2-apartado_metodologico}
+\include{3-análisis_y_diseño}
+\include{4-analisis_de_resultados_experimentales_y_discusion}
+\include{5-conclusiones}
+
+
+
+
+
+\begin{thebibliography}{}
+  \bibitem{fundamental} Robert W. Erickson, Dragan Maksimovic {\em Fundamentals of
+  Power Electronics} Second Edition 2001.
+  
+  \bibitem{power}  Ned Mohan, Tore M. Undeland {\em POWER ELECTRONICS Converters, Applications, and Design} Third edition 2003.
+
+
+  \bibitem{ir2110web} International Rectifier {\em Application Note} AN978a.
+
+
+
+
+\end{thebibliography}
+
+%\bibliography{bibliografia}
+%\bibliographystyle{babunsrt}
+
+
+
+
+\appendix
+\include{AP-Code}
+\include{AP-Google_sheet_code}
+%\include{AP-Datos_de_Excel}
+\include{AP-Esquematico}
+\end{document}
